@@ -14,6 +14,14 @@ make menuconfig
 make BR2_DEFCONFIG=$PWD/configs/qemux86-64_defconfig savedefconfig
 ```
 
+### For stm32mp157f-dk2 target:
+
+```
+make stm32mp157f_dk2_defconfig
+make menuconfig
+make BR2_DEFCONFIG=$PWD/configs/stm32mp157f_dk2_defconfig savedefconfig
+```
+
 ## Build Image
 
 ```
