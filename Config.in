@@ -1,1 +1,1 @@
-#source "$BR2_EXTERNAL_EMBETRIX_PATH/package/mypackage/Config.in"
+source "$BR2_EXTERNAL_EMBETRIX_PATH/package/stm32mp-sign-tool/Config.in.host"

@@ -1,0 +1,8 @@
+config BR2_PACKAGE_HOST_STM32MP_SIGN_TOOL
+	bool "host stm32mp-sign-tool"
+	help
+	  stm32mp-sign-tool is an utility for 
+	  signing and verifying firmware images 
+	  compatible with STM32MP MPUs
+
+	  https://github.com/embetrix/stm32mp-sign-tool
