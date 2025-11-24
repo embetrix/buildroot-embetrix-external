@@ -1,0 +1,16 @@
+config BR2_PACKAGE_MINIMAL_QT5
+    bool "minimal-qt5"
+    depends on BR2_INSTALL_LIBSTDCPP
+    select BR2_PACKAGE_QT5
+    select BR2_PACKAGE_QT5BASE
+    select BR2_PACKAGE_QT5DECLARATIVE
+    select BR2_PACKAGE_QT5TOOLS
+    select BR2_PACKAGE_QT5BASE_FONTCONFIG
+    select BR2_PACKAGE_QT5BASE_GUI
+    select BR2_PACKAGE_QT5BASE_WIDGETS
+    select BR2_PACKAGE_FONT_AWESOME
+    help
+      minimal-qt5
+
+comment "minimal-qt5 needs a toolchain w/ C++"
+    depends on !BR2_INSTALL_LIBSTDCPP
