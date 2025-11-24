@@ -1,5 +1,6 @@
 #!/bin/sh -eu
 
+BOARD_DIR=$(dirname "$0")
 #
 # atf_image extracts the ATF binary image from DTB_FILE_NAME that appears in
 # BR2_TARGET_ARM_TRUSTED_FIRMWARE_ADDITIONAL_VARIABLES in ${BR_CONFIG},
@@ -22,10 +23,10 @@ main()
 	GENIMAGE_CFG="$(mktemp --suffix genimage.cfg)"
 
 	sed -e "s/%ATFBIN%/${ATFBIN}/" \
-		"${BR2_EXTERNAL_EMBETRIX_PATH}/board/stmicroelectronics/stm32mp157f-dk2/genimage.cfg.template" > ${GENIMAGE_CFG}
+		"${BOARD_DIR}/genimage.cfg.template" > ${GENIMAGE_CFG}
 
 	support/scripts/genimage.sh -c ${GENIMAGE_CFG}
-
+	gzip -c9 ${BINARIES_DIR}/sdcard.img > ${BINARIES_DIR}/sdcard.img.gz
 	rm -f ${GENIMAGE_CFG}
 
 	exit $?
