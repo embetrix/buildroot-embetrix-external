@@ -1,0 +1,16 @@
+config BR2_PACKAGE_QSTOPWATCH
+    bool "qstopwatch"
+    depends on BR2_INSTALL_LIBSTDCPP
+    select BR2_PACKAGE_QT5
+    select BR2_PACKAGE_QT5BASE
+    select BR2_PACKAGE_QT5DECLARATIVE
+    select BR2_PACKAGE_QT5TOOLS
+    select BR2_PACKAGE_QT5BASE_FONTCONFIG
+    select BR2_PACKAGE_QT5BASE_GUI
+    select BR2_PACKAGE_QT5BASE_WIDGETS
+    select BR2_PACKAGE_FONT_AWESOME
+    help
+      qstopwatch
+
+comment "qstopwatch needs a toolchain w/ C++"
+    depends on !BR2_INSTALL_LIBSTDCPP
