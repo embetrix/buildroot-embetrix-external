@@ -8,8 +8,6 @@ AUSWEISAPP_LICENSE_FILES = LICENSE.txt
 AUSWEISAPP_SUPPORTS_IN_SOURCE_BUILD = NO
 
 AUSWEISAPP_DEPENDENCIES = \
-	host-cmake \
-	host-ninja \
 	host-pkgconf \
 	host-qt6tools \
 	host-qt6shadertools \
