@@ -1,0 +1,12 @@
+[Unit]
+Description=AusweisApp service
+Conflicts=getty@tty1.service
+DefaultDependencies=no
+
+[Service]
+EnvironmentFile=/etc/AusweisApp/ausweisapp.env
+ExecStart=/usr/bin/AusweisApp --port 24727 --address 0.0.0.0 --no-logfile
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+export XDG_RUNTIME_DIR=/home/root
+export XDG_CONFIG_HOME=/etc
+export QT_QPA_PLATFORM="vnc"
+export EXTRA_ARGS="--port 24727 --address 0.0.0.0"

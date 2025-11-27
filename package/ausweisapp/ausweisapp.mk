@@ -27,4 +27,28 @@ AUSWEISAPP_CONF_OPTS = \
 
 AUSWEISAPP_CMAKE_BACKEND = ninja
 
+define AUSWEISAPP_INSTALL_INIT_SYSV
+	$(INSTALL) -d $(TARGET_DIR)/etc/default
+	$(INSTALL) -D -m 0644 $(AUSWEISAPP_PKGDIR)/ausweisapp.default \
+		                 $(TARGET_DIR)/etc/default/ausweisapp.default
+	$(INSTALL) -D -m 0755 $(AUSWEISAPP_PKGDIR)/S43ausweisapp \
+		$(TARGET_DIR)/etc/init.d/S43ausweisapp
+endef
+
+define AUSWEISAPP_INSTALL_INIT_SYSTEMD
+	$(INSTALL) -d $(TARGET_DIR)/etc/AusweisApp
+	$(INSTALL) -D -m 0644 $(AUSWEISAPP_PKGDIR)/ausweisapp.env \
+		                 $(TARGET_DIR)/etc/AusweisApp/ausweisapp.env
+	$(INSTALL) -D -m 0644 $(AUSWEISAPP_PKGDIR)/ausweisapp.service \
+		$(TARGET_DIR)/usr/lib/systemd/system/ausweisapp.service
+endef
+
+define AUSWEISAPP_INSTALL_CONF
+	$(INSTALL) -d $(TARGET_DIR)/etc/AusweisApp
+	$(INSTALL) -D -m 0644 $(AUSWEISAPP_PKGDIR)/AusweisApp2.conf \
+		$(TARGET_DIR)/etc/AusweisApp/AusweisApp2.conf
+endef
+
+AUSWEISAPP_POST_INSTALL_TARGET_HOOKS += AUSWEISAPP_INSTALL_CONF
+
 $(eval $(cmake-package))
