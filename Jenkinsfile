@@ -43,7 +43,7 @@ pipeline {
         stage('Generate SDK') {
             steps {
                 sh "make sdk"
-                archiveArtifacts artifacts: "output/images/*-buildroot-linux-gnu_sdk-buildroot.tar.gz",
+                archiveArtifacts artifacts: "output/images/*_sdk-buildroot.tar.gz",
                                             followSymlinks: true,
                                             fingerprint: true,
                                             onlyIfSuccessful: true
