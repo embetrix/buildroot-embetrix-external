@@ -1,3 +1,5 @@
 source "$BR2_EXTERNAL_EMBETRIX_PATH/package/stm32mp-sign-tool/Config.in.host"
 source "$BR2_EXTERNAL_EMBETRIX_PATH/package/minimal-qt5/Config.in"
 source "$BR2_EXTERNAL_EMBETRIX_PATH/package/qstopwatch/Config.in"
+source "$BR2_EXTERNAL_EMBETRIX_PATH/package/qt6connectivity/Config.in"
+source "$BR2_EXTERNAL_EMBETRIX_PATH/package/ausweisapp/Config.in"
