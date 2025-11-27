@@ -1,0 +1,23 @@
+From ac74e55d516e007b153e32d86eb2cea3bc2e9ccb Mon Sep 17 00:00:00 2001
+From: Ayoub Zaki <ayoub.zaki@embetrix.com>
+Date: Thu, 27 Nov 2025 12:08:00 +0100
+Subject: [PATCH] CMakeLists.txt: set minimum version to 3.21
+
+Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b0d08fab..6caa0465 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.25)
++cmake_minimum_required(VERSION 3.21)
+ 
+ set(CMAKE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ set(CMAKE_MODULE_PATH "${CMAKE_DIR}")
+-- 
+2.43.0
+

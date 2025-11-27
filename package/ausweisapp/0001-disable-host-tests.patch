@@ -1,0 +1,30 @@
+From 1d93270ba100a57786ed35fe99ccf13cda064149 Mon Sep 17 00:00:00 2001
+From: Ayoub Zaki <ayoub.zaki@embetrix.com>
+Date: Mon, 4 Aug 2025 12:36:33 +0200
+Subject: [PATCH] disable host tests
+
+Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
+---
+ cmake/Libraries.cmake | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/cmake/Libraries.cmake b/cmake/Libraries.cmake
+index b5a97105..433680ae 100644
+--- a/cmake/Libraries.cmake
++++ b/cmake/Libraries.cmake
+@@ -161,12 +161,3 @@ if(QT_COMPONENTS)
+ 	find_package(${Qt} ${MIN_QT_VERSION} REQUIRED COMPONENTS ${QT_COMPONENTS} OPTIONAL_COMPONENTS ${QT_COMPONENTS_OPTIONAL})
+ endif()
+ 
+-if(LINUX OR BSD)
+-	try_run(testResult compileResult "${CMAKE_BINARY_DIR}" "${CMAKE_DIR}/tests/openssl.cpp"
+-		CMAKE_FLAGS INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
+-		LINK_LIBRARIES ${Qt}::Network OpenSSL::Crypto OpenSSL::SSL
+-		OUTPUT_VARIABLE runResult)
+-	if(NOT testResult EQUAL 0)
+-		message(FATAL_ERROR "Your OpenSSL library looks incompatible: ${testResult}\n${runResult}")
+-	endif()
+-endif()
+-- 
+2.43.0
+
