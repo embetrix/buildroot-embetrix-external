@@ -1,0 +1,11 @@
+[Unit]
+Description=qstopwatch service
+Conflicts=getty@tty1.service
+DefaultDependencies=no
+
+[Service]
+ExecStart=/usr/bin/qstopwatch
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
