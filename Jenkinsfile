@@ -4,7 +4,7 @@ pipeline {
 
   parameters {
         gitParameter branchFilter: 'origin/(.*)', defaultValue: '2025.02.x', selectedValue: 'DEFAULT', name: 'BRANCH', type: 'PT_BRANCH', description: 'branch to build'
-        choice choices: ['stm32mp157f_dk2_defconfig', 'qemux86-64_defconfig'], description: 'select config', name: 'CONFIG'
+        choice choices: ['stm32mp157f_dk2_defconfig', 'stm32f469_disco_xip_defconfig', 'qemux86-64_defconfig'], description: 'select config', name: 'CONFIG'
         choice choices: ['no', 'yes'], description: 'clean workspace', name: 'CLEAN'
     }
 
